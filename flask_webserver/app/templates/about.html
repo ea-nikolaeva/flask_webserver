@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+    <h1>About</h1>
+    <div>
+        Covert channel is a communication channel that allows a process
+        to transfer information in a manner that violates the system's security policy
+    </div>
+    <p>Want to learn about the types covert channels?
+        <a href="{{ url_for('types') }}">Types</a>
+    </p>
+    <p>Click to return home
+        <a href="{{ url_for('main') }}">Home</a>
+    </p>
+{% endblock %}

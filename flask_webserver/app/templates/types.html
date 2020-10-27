@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+    <h1>Types</h1>
+    <p>Want to read about storage covert channels?
+        <a href="{{ url_for('storage') }}">Storage</a>
+    </p>
+    <p>Want to read about timing covert channels?
+        <a href="{{ url_for('timing') }}">Timing</a>
+    </p>
+    <p>Want to read about behavioral covert channels?
+        <a href="{{ url_for('behavioral') }}">Behavioral</a>
+    </p>
+    <p>Click to return home
+        <a href="{{ url_for('main') }}">Home</a>
+    </p>
+{% endblock %}

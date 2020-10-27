@@ -1,0 +1,53 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block styles %}
+{{ super() }}
+<style>
+    .navbar-default {
+        background-color: mediumpurple;
+    }
+    .navbar-default a{
+        color: white;
+    }
+</style>
+{% endblock %}
+
+{% block title %}
+    {% if title %}{{ title }} - Covert Channels{% else %}Welcome to Covert Channels{% endif %}
+{% endblock %}
+
+{% block navbar %}
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <p class="navbar-text">
+                <a href="{{ url_for('main') }}">Home</a>
+            </p>
+            {% if current_user.is_anonymous %}
+                <p class="navbar-text navbar-right">
+                    <a href="{{ url_for('register') }}">Sign Up</a>
+                </p>
+                <p class="navbar-text navbar-right">
+                    <a href="{{ url_for('login') }}">Login</a>
+                </p>
+            {% else %}
+                <p class="navbar-text navbar-right">
+                    <a href="{{ url_for('logout') }}">Logout</a>
+                </p>
+            {% endif %}
+        </div>
+    </nav>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-info" role="alert">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        {% block app_content %}{% endblock %}
+    </div>
+{% endblock %}
