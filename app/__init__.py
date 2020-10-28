@@ -13,3 +13,7 @@ login = LoginManager(app)
 login.login_view = 'login'
 bootstrap = Bootstrap(app)
 
+from app import routes
+
+if __name__ == '__main__':
+    app.run()
