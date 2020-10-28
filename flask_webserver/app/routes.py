@@ -1,11 +1,10 @@
-from flask import Flask, render_template, flash, redirect, request
+from flask import render_template, flash, redirect, request
 from app.forms import LoginForm, RegistrationForm
-from flask_login import LoginManager, current_user, login_user, logout_user
+from flask_login import current_user, login_user, logout_user
 from app.models import User
 from flask_login import login_required
 from werkzeug.urls import url_parse
 from app import app, db
-import email_validator
 
 
 @app.route('/')
@@ -87,5 +86,3 @@ def behavioral():
     return render_template('behavioral.html')
 
 
-if __name__ == '__main__':
-    app.run()

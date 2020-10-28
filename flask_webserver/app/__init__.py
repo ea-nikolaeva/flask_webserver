@@ -13,5 +13,3 @@ login = LoginManager(app)
 login.login_view = 'login'
 bootstrap = Bootstrap(app)
 
-with app.app_context():
-    print(current_app.name)
