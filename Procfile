@@ -1,1 +1,1 @@
-web: gunicorn flask_proj:app
+web: gunicorn routes:app
