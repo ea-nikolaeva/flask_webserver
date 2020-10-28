@@ -1,6 +1,8 @@
 .DS_Store
 
 __pycache__/
+migrations
+
 
 .env
 .venv
@@ -8,3 +10,4 @@ env/
 venv/
 
 .idea
+.db
